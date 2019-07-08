@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import auth from '../../auth.json';
 
 class Instagram extends React.Component {
     state = {
@@ -7,7 +8,7 @@ class Instagram extends React.Component {
     };
 
     componentDidMount() {
-        let token = '5722699482.a510beb.691d08e9ee3b4d43a27e43ac2bb4fb4f';
+        let token = auth.instagram.token;
         let num_photos = 12;
 
 
