@@ -2,6 +2,7 @@
   text-align: center;
   width:1420px;
   height:1080px;
+
 }
 
 .App-logo {
@@ -19,6 +20,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index:9999;
+  position: fixed;
+  top:0;
+  left:0;
+
+}
+
+.stories{
+  position: fixed;
+  top:200px;
+  left:409px;
+  z-index: 9999;
 }
 
 .App-link {

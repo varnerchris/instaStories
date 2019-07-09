@@ -3,18 +3,21 @@ import Stories from 'react-insta-stories';
 import axios from 'axios';
 //import Image from '../Image/Image';
 import auth from '../../auth.json';
-import moment from 'moment'
+//import moment from 'moment'
 
 
 class InstaStories extends Component {
   constructor(props){
     super(props);
-    this.state={ images:[] }
+    this.state={
+      images:[],
+      likes:{}
+    }
   };
 
   componentDidMount() {
       let token = auth.instagram.token;
-      let num_photos = 12;
+      let num_photos = 6;
 
       axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' + token + '&count=' + num_photos)
           .then(res => {
@@ -24,8 +27,10 @@ class InstaStories extends Component {
           .catch(err => {
               console.log(err)
           })
-
   }
+
+
+
 
   render () {
 
@@ -41,17 +46,19 @@ class InstaStories extends Component {
       return <div/>
     }
 
-    //console.log(storiesNew)
+
 
     return (
 
       <Stories
        stories={storiesNew}
-       defaultInterval={12000}
+       defaultInterval={6000}
        width={600}
        height={600}
        loop={true}
       />
+
+
 
     )
   }
